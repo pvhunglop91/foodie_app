@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/pages/payment/payment_page.dart';
 import '../../../components/app_box_shadow.dart';
 import '../../../components/button/app_elevated_button.dart';
 
@@ -15,7 +16,7 @@ class DeliveryTime extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 10.0),
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(Radius.circular(20.0)),
@@ -38,7 +39,7 @@ class DeliveryTime extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 12.0),
+          const SizedBox(height: 16.0),
           const Row(
             children: [
               Text(
@@ -48,7 +49,7 @@ class DeliveryTime extends StatelessWidget {
               Spacer(),
             ],
           ),
-          const SizedBox(height: 10.0),
+          const SizedBox(height: 14.0),
           Row(
             children: [
               const Text(
@@ -64,7 +65,13 @@ class DeliveryTime extends StatelessWidget {
               ),
               const Spacer(),
               AppElevatedButton.small(
-                onPressed: () {},
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: ((context) => const PaymentPage()),
+                  ),
+                ),
+                height: 40.0,
                 text: 'Place Order',
                 borderRadius: const BorderRadius.all(Radius.circular(10.0)),
                 padding: const EdgeInsets.symmetric(horizontal: 18.0),

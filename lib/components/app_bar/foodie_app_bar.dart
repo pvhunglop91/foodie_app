@@ -7,16 +7,19 @@ import 'package:food_app/services/local/shared_prefs.dart';
 import 'package:shimmer/shimmer.dart';
 
 class FoodieAppBar extends StatefulWidget implements PreferredSizeWidget {
-  const FoodieAppBar(
-      {super.key,
-      this.leftPressed,
-      this.color,
-      required this.icon,
-      required this.title});
+  FoodieAppBar({
+    super.key,
+    this.leftPressed,
+    this.color,
+    Icon? icon,
+    required this.title,
+  }) : icon = icon ??
+            Icon(Icons.arrow_back_ios_new,
+                color: Colors.brown.withOpacity(0.8));
 
   final Function()? leftPressed;
   final Color? color;
-  final Icon icon;
+  final Icon? icon;
   final String title;
 
   @override
