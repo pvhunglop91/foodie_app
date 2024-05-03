@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class AppElevatedButton extends StatelessWidget {
@@ -6,6 +5,7 @@ class AppElevatedButton extends StatelessWidget {
     super.key,
     this.onPressed,
     this.height = 54.0,
+    this.icon,
     required this.text,
     this.textColor = Colors.white,
     this.fontSize = 16.8,
@@ -19,6 +19,7 @@ class AppElevatedButton extends StatelessWidget {
     super.key,
     this.onPressed,
     this.height = 54.0,
+    this.icon,
     required this.text,
     this.textColor = Colors.red,
     this.fontSize = 16.8,
@@ -32,6 +33,7 @@ class AppElevatedButton extends StatelessWidget {
     super.key,
     this.onPressed,
     this.height = 36.0,
+    this.icon,
     required this.text,
     this.textColor = Colors.white,
     this.fontSize = 16.0,
@@ -45,6 +47,7 @@ class AppElevatedButton extends StatelessWidget {
     super.key,
     this.onPressed,
     this.height = 36.0,
+    this.icon,
     required this.text,
     this.textColor = Colors.red,
     this.fontSize = 16.0,
@@ -56,6 +59,7 @@ class AppElevatedButton extends StatelessWidget {
 
   final Function()? onPressed;
   final double height;
+  final Icon? icon;
   final String text;
   final Color textColor;
   final double fontSize;
@@ -84,16 +88,23 @@ class AppElevatedButton extends StatelessWidget {
             ),
           ],
         ),
-        child: Text(
-          text,
-          style: TextStyle(
-            color: textColor,
-            fontSize: fontSize,
-            fontWeight: FontWeight.w500,
+        child: Row(children: [
+          if (icon != null) ...[
+            icon!,
+            const SizedBox(
+              height: 4.0,
+            )
+          ],
+          Text(
+            text,
+            style: TextStyle(
+              color: textColor,
+              fontSize: fontSize,
+              fontWeight: FontWeight.w500,
+            ),
           ),
-        ),
+        ]),
       ),
     );
   }
 }
-

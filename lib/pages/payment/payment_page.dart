@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/components/app_bar/foodie_app_bar.dart';
 import 'package:food_app/components/app_box_shadow.dart';
+import 'package:food_app/pages/payment/address_page.dart';
 import 'package:food_app/pages/payment/payment_method_page.dart';
 
 class PaymentPage extends StatefulWidget {
@@ -23,10 +24,13 @@ class _PaymentPageState extends State<PaymentPage> {
             .copyWith(top: 40.0, bottom: 20.0),
         child: Column(
           children: [
-            _paymentItem(
-              'Choose Address',
-              onPressed: () {},
-            ),
+            _paymentItem('Choose Address',
+                onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: ((context) => const AddressPage()),
+                      ),
+                    )),
             const SizedBox(height: 20.0),
             _paymentItem(
               'Choose Method',

@@ -43,9 +43,9 @@ class _WelcomePageState extends State<WelcomePage> {
             ),
           ),
           Positioned(
-            left: 0.0,
+            left: 20.0,
             top: size.height / 2.0,
-            right: 0.0,
+            right: 20.0,
             bottom: 72.0,
             child: Column(
               children: [
@@ -58,30 +58,25 @@ class _WelcomePageState extends State<WelcomePage> {
                 const Text('dolor. Donec vitae facilisis velit.',
                     style: textStyle),
                 const Spacer(),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                          horizontal: 20.0) // -> o day ne
-                      .copyWith(bottom: 20.0),
-                  child: AppElevatedButton(
-                      onPressed: () => Navigator.of(context).pushAndRemoveUntil(
-                            MaterialPageRoute(
-                                builder: (context) => const LoginPage()),
-                            (Route<dynamic> route) => false,
-                          ),
-                      text: 'Login'),
-                ),
+                AppElevatedButton(
+                    onPressed: () => Navigator.of(context).pushAndRemoveUntil(
+                          MaterialPageRoute(
+                              builder: (context) => const LoginPage()),
+                          (Route<dynamic> route) => false,
+                        ),
+                    text: 'Login'),
                 // const SizedBox(height: 20.0),  khong can Sizebox, minh copy with bottom mo nut tren luon
                 //name constructor
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: AppElevatedButton.outline(
-                      onPressed: () => Navigator.of(context).pushAndRemoveUntil(
-                            MaterialPageRoute(
-                                builder: (context) => const RegisterPage()),
-                            (Route<dynamic> route) => false,
-                          ),
-                      text: 'Sign Up'),
-                )
+                const SizedBox(
+                  height: 20.0,
+                ),
+                AppElevatedButton.outline(
+                    onPressed: () => Navigator.of(context).pushAndRemoveUntil(
+                          MaterialPageRoute(
+                              builder: (context) => const RegisterPage()),
+                          (Route<dynamic> route) => false,
+                        ),
+                    text: 'Sign Up')
               ],
             ),
           ),
